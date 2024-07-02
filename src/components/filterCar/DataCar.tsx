@@ -1,4 +1,7 @@
 import React from "react";
+import icUser from "../../assets/images/main/icon/fi_users.png";
+import icSetting from "../../assets/images/main/icon/fi_settings.png";
+import icCalender from "../../assets/images/main/icon/fi_calendar.png";
 
 interface Car {
   id: string;
@@ -28,7 +31,7 @@ const DataCar: React.FC<DataCarProps> = ({ car }) => {
     image,
   } = car;
 
-  console.log(image);
+  // console.log(description.substring(0, 60));
 
   return (
     <div className="card shadow p-3 rounded">
@@ -39,12 +42,12 @@ const DataCar: React.FC<DataCarProps> = ({ car }) => {
       <p className="card-title fs-16">
         Rp {new Intl.NumberFormat("id").format(rentPerDay)} / hari
       </p>
-      <p className="card-text fs-14 fw-light">{description}</p>
+      <p className="card-text fs-14 fw-light">{description.substring(0, 60)}</p>
       <ul className="list-unstyled">
         <li className="mb-3">
           <img
             className="icon-20 me-2"
-            src="./images/main/icon/fi_users.png"
+            src={icUser}
             alt="logo"
           />
           {capacity} orang
@@ -52,7 +55,7 @@ const DataCar: React.FC<DataCarProps> = ({ car }) => {
         <li className="mb-3">
           <img
             className="icon-20 me-2"
-            src="./images/main/icon/fi_settings.png"
+            src={icSetting}
             alt="logo"
           />
           {transmission}
@@ -60,7 +63,7 @@ const DataCar: React.FC<DataCarProps> = ({ car }) => {
         <li className="mb-3">
           <img
             className="icon-20 me-2"
-            src="./images/main/icon/fi_calendar.png"
+            src={icCalender}
             alt="logo"
           />
           {year}{" "}

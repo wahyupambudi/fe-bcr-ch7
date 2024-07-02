@@ -43,7 +43,7 @@ const SearchBar: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json"
+          "https://raw.githubusercontent.com/wahyupambudi/24001118-snyrgy7-wahyupambudi-bcr-ch4/main/data/cars.json"
         );
         const data = await response.json();
         localStorage.setItem("CARS", JSON.stringify(data));
@@ -185,7 +185,7 @@ const SearchBar: React.FC = () => {
           <div className="row" id="cars-container">
             {filteredCars.map((car) => (
               // eslint-disable-next-line react/jsx-key
-              <div className="col-md-4">
+              <div className="col-md-4 mt-3">
                 <DataCar key={car.id} car={car} />
               </div>
             ))}
